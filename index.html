@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH NEXUS WORLD - YOUR ULTIMATE COMPUTER & LAPTOP STORE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc; /* Light Slate */
+            color: #333; /* Darker text for better contrast */
+        }
+        /* Custom styling for capitalization and prominence with Roboto font */
+        .header-title {
+            text-transform: uppercase;
+            font-weight: 900; /* Extra bold for prominence */
+            letter-spacing: 0.08em; /* Slightly more spacing for impact */
+        }
+        .nav-link {
+            text-transform: uppercase;
+            font-weight: 500; /* Medium bold for nav links */
+            letter-spacing: 0.05em;
+        }
+        .hero-section {
+            background: radial-gradient(circle at top left, #3b82f6, #4c1d95); /* Inspired by image background */
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem; /* rounded-xl */
+            margin: 2rem 1rem; /* mx-4 my-8 */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* shadow-xl */
+        }
+        .hero-heading {
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: #fff;
+        }
+        .hero-subtext {
+            text-transform: uppercase;
+            font-weight: 300; /* Lighter weight for subtext */
+            letter-spacing: 0.03em;
+            color: #e0e0e0;
+        }
+        .section-heading {
+            text-transform: uppercase;
+            font-weight: 700; /* Bold for section headings */
+            letter-spacing: 0.05em;
+            color: #333; /* Dark text */
+        }
+        .sub-heading {
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: #555;
+            text-align: center;
+        }
+        .content-paragraph {
+            text-transform: none; /* Allow normal casing for body text */
+            font-weight: 400; /* Regular weight for readability */
+            line-height: 1.7;
+            text-align: justify;
+        }
+        .button-primary {
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        .footer-text {
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .terms-list li {
+            margin-bottom: 0.5em;
+            text-transform: none;
+            font-weight: 400;
+        }
+        .terms-list strong {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* Mobile Menu Overlay Styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        .mobile-menu-overlay.open {
+            transform: translateX(0);
+        }
+        .mobile-menu-content {
+            background-color: #1a202c; /* Dark background */
+            width: 70%; /* Adjust as needed */
+            max-width: 300px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .mobile-menu-content a {
+            color: #fff;
+            padding: 0.75rem 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-menu-content a:hover {
+            color: #63b3ed;
+        }
+        .mobile-menu-close-btn {
+            color: #fff;
+            font-size: 2rem;
+            align-self: flex-end;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-content rounded-r-lg">
+            <button id="mobile-menu-close-btn" class="mobile-menu-close-btn">&times;</button>
+            <a href="#home" class="nav-link">HOME</a>
+            <a href="#about-us" class="nav-link">ABOUT US</a>
+            <a href="#conditions-terms" class="nav-link">OUR CONDITIONS AND TERMS</a>
+            <a href="#our-services" class="nav-link">OUR SERVICES</a>
+            <a href="#shopping" class="nav-link">SHOPPING</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 rounded-b-lg">
+        <div class="flex items-center">
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-toggle-btn" class="md:hidden text-gray-600 hover:text-blue-700 focus:outline-none mr-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="#" class="text-2xl header-title text-blue-700">TECH NEXUS WORLD</a>
+            <nav class="hidden md:flex ml-8 space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-700 nav-link transition duration-300">HOME</a>
+                <a href="#products-section" class="text-gray-700 hover:text-blue-700 nav-link transition duration-300">PRODUCTS</a>
+                <a href="#about-us" class="text-gray-700 hover:text-blue-700 nav-link transition duration-300">ABOUT US</a>
+                <a href="#conditions-terms" class="text-gray-700 hover:text-blue-700 nav-link transition duration-300">CONDITIONS & TERMS</a>
+                <a href="#our-services" class="text-gray-700 hover:text-blue-700 nav-link transition duration-300">SERVICES</a>
+                <a href="#shopping" class="text-gray-700 hover:text-blue-700 nav-link transition duration-300">SHOPPING</a>
+            </nav>
+        </div>
+        <div class="flex items-center">
+            <!-- Search Icon -->
+            <button class="text-gray-600 hover:text-blue-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero/Home Section -->
+    <section id="home" class="hero-section text-white py-20 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-full text-center mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-6xl hero-heading leading-tight mb-4 text-yellow-300">
+                WELCOME TO TECH NEXUS WORLD
+            </h1>
+            <h2 class="text-3xl md:text-4xl hero-heading leading-tight mb-6">
+                FIND YOUR PERFECT LAPTOP AND PC HERE
+            </h2>
+            <p class="text-lg md:text-xl hero-subtext mb-8 max-w-3xl mx-auto">
+                EXPLORE OUR EXTENSIVE COLLECTION OF HIGH-QUALITY LAPTOPS AND PC DESIGNED TO MEET EVERY NEED AND BUDGET. WHETHER YOU'RE A STUDENT, A PROFESSIONAL, A GAMER, OR SIMPLY LOOKING FOR A RELIABLE EVERYDAY COMPANION, WE HAVE THE PERFECT DEVICE FOR YOU. DISCOVER THE LATEST MODELS FROM TOP BRANDS, FEATURING POWERFUL PERFORMANCE, STUNNING DISPLAYS, AND INNOVATIVE FEATURES. BROWSE OUR CURATED SELECTION AND FIND THE LAPTOP THAT EMPOWERS YOU TO DO MORE.
+            </p>
+        </div>
+    </section>
+
+    <!-- Development in Progress Message -->
+    <section class="bg-yellow-50 text-yellow-800 text-center py-5 px-6 md:px-12 mx-4 my-8 rounded-lg shadow-inner">
+        <p class="text-xl font-medium uppercase">
+            ✨ WEBSITE DEVELOPMENT IS IN PROGRESS. WILL COME WITH NEW UPDATES AND FEATURES SOON! ✨
+        </p>
+    </section>
+
+    <!-- Products section - All image options removed -->
+    <section id="products-section" class="py-12 px-6 md:px-12 bg-white rounded-xl mx-4 my-8 shadow-md">
+        <h2 class="text-3xl section-heading text-center mb-10">OUR PRODUCTS</h2>
+        <div class="flex justify-center items-center h-48 bg-gray-100 rounded-lg text-gray-600 text-xl font-semibold uppercase">
+            Product Showcase Coming Soon!
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="py-16 px-6 md:px-16 bg-white rounded-xl mx-4 my-8 shadow-md">
+        <h2 class="text-3xl section-heading text-center mb-10">ABOUT US</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div>
+                <p class="text-lg font-semibold mb-4 text-center uppercase">EMPHASIZING CUSTOMER SATISFACTION --- OUR STORY: PUTTING YOU FIRST AT [TECH NEXUS WORLD].</p>
+                <p class="content-paragraph mb-4">
+                    FOUNDED ON THE BELIEF THAT CUSTOMER SATISFACTION IS PARAMOUNT, [TECH NEXUS WORLD] STRIVES TO PROVIDE AN EXCEPTIONAL ONLINE EXPERIENCE. FROM OUR USER-FRIENDLY WEBSITE TO OUR DEDICATED SUPPORT TEAM, EVERY ASPECT OF OUR BUSINESS IS DESIGNED WITH YOU IN MIND. WE'RE COMMITTED TO OFFERING HIGH-QUALITY [LAPTOPS/PRODUCTS/SERVICES] AND ENSURING YOUR COMPLETE SATISFACTION, EVERY STEP OF THE WAY. WE BELIEVE IN BUILDING LASTING RELATIONSHIPS WITH OUR CUSTOMERS AND ARE ALWAYS HERE TO HELP.
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold mb-4 text-center uppercase">HIGHLIGHTING EXPERTISE AND GUIDANCE --- ABOUT [TECH NEXUS WORLD]: YOUR TRUSTED TECH RESOURCE.</p>
+                <p class="content-paragraph mb-4">
+                    IN THE EVER-EVOLVING WORLD OF TECHNOLOGY, IT CAN BE TOUGH TO KNOW WHERE TO TURN. AT [TECH NEXUS WORLD], WE AIM TO BE YOUR TRUSTED GUIDE. OUR TEAM OF TECH ENTHUSIASTS [AND EXPERTS] ARE DEDICATED TO PROVIDING YOU WITH INSIGHTFUL INFORMATION, HONEST REVIEWS, AND A CAREFULLY SELECTED RANGE OF [LAPTOPS/PRODUCTS/SERVICES] TO HELP YOU MAKE INFORMED DECISIONS. WE'RE MORE THAN JUST A WEBSITE; WE'RE A COMMUNITY OF TECH LOVERS COMMITTED TO EMPOWERING YOU WITH KNOWLEDGE AND THE RIGHT TOOLS.
+                </p>
+            </div>
+            <p class="text-lg font-semibold text-center uppercase">WE ARE AVAILABLE ALL OUR KARNATAKA</p>
+            <p class="text-lg font-semibold text-center uppercase">FOR MORE INFORMATION --</p>
+            <p class="text-lg font-semibold text-center uppercase">CONTACT US --- 9110264589 / 9480317217 OR VISIT OUR INSTAGRAM ID ---</p>
+        </div>
+    </section>
+
+    <!-- Our Conditions and Terms Section -->
+    <section id="conditions-terms" class="py-16 px-6 md:px-16 bg-gray-100 rounded-xl mx-4 my-8 shadow-md">
+        <h2 class="text-3xl section-heading text-center mb-10">OUR CONDITIONS AND TERMS</h2>
+        <div class="max-w-5xl mx-auto content-paragraph text-sm">
+            <p class="mb-4">
+                THIS DOCUMENT (THE "TERMS") GOVERNS YOUR ACCESS TO AND USE OF THE WEBSITE OPERATED BY [TECH NEXUS WORLD] ("COMPANY," "WE," "US," OR "OUR"). BY ACCESSING OR USING THE WEBSITE, YOU AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, YOU MAY NOT ACCESS OR USE THE WEBSITE.
+            </p>
+            <ol class="list-decimal list-inside terms-list space-y-2">
+                <li><strong>DEFINITIONS:</strong></li>
+                <ul class="list-disc list-inside ml-4">
+                    <li>"USER" REFERS TO ANY PERSON ACCESSING OR USING THE WEBSITE AND/OR PURCHASING PRODUCTS FROM US.</li>
+                    <li>"PRODUCT" REFERS TO ANY ITEM OFFERED FOR SALE ON THE WEBSITE.</li>
+                    <li>"WEBSITE" REFERS TO THE ENTIRE PLATFORM OPERATED BY US.</li>
+                </ul>
+                <li><strong>ORDER PLACEMENT:</strong> BY PLACING AN ORDER, YOU AGREE TO PAY THE SPECIFIED PRICE FOR PRODUCTS AND SUBMIT TO THE PAYMENT PROCESS. ALL ORDERS ARE SUBJECT TO AVAILABILITY AND CONFIRMATION OF THE ORDER PRICE.</li>
+                <li><strong>PRICING:</strong> PRICES DISPLAYED ON THE WEBSITE ARE IN INDIAN RUPEES (INR) AND ARE SUBJECT TO CHANGE WITHOUT PRIOR NOTICE. HOWEVER, SUCH CHANGES WILL NOT AFFECT ORDERS ALREADY PLACED.</li>
+                <li><strong>PRODUCT DESCRIPTIONS:</strong> WE STRIVE TO PROVIDE ACCURATE AND COMPLETE DESCRIPTIONS OF ALL PRODUCTS. HOWEVER, WE DO NOT WARRANT THAT PRODUCT DESCRIPTIONS OR OTHER CONTENT OF THIS WEBSITE IS ACCURATE, COMPLETE, RELIABLE, CURRENT, OR ERROR-FREE.</li>
+                <li><strong>SHIPPING AND DELIVERY:</strong> WE WILL ENDEAVOR TO DELIVER PRODUCTS WITHIN THE ESTIMATED TIMEFRAME PROVIDED. HOWEVER, WE ARE NOT RESPONSIBLE FOR DELAYS CAUSED BY UNFORESEEN CIRCUMSTANCES OR THIRD-PARTY SERVICE PROVIDERS.
+                <ul class="list-disc list-inside ml-4">
+                    <li>RISK OF LOSS AND TITLE FOR PRODUCTS PASS TO YOU UPON OUR DELIVERY TO THE CARRIER.</li>
+                    <li>FOR DELIVERED PRODUCTS, PLEASE INSPECT THE PACKAGE UPON ARRIVAL. IF ANY DAMAGE IS NOTED, PLEASE REPORT IT IMMEDIATELY WITH PHOTOGRAPHS.</li>
+                </ul></li>
+                <li><strong>RETURNS AND REFUNDS:</strong> OUR RETURNS AND REFUNDS POLICY IS AVAILABLE ON THE WEBSITE. PLEASE REVIEW THIS POLICY CAREFULLY.
+                <ul class="list-disc list-inside ml-4">
+                    <li>PRODUCTS MUST BE RETURNED IN THEIR ORIGINAL CONDITION, UNUSED, AND WITH ALL ORIGINAL PACKAGING AND ACCESSORIES.</li>
+                    <li>REFUNDS WILL BE PROCESSED WITHIN A REASONABLE TIMEFRAME AFTER PRODUCT INSPECTION. THE REFUND WILL BE ISSUED IN THE ORIGINAL PAYMENT METHOD.</li>
+                    <li>WE RESERVE THE RIGHT TO REFUSE RETURNS IF PRODUCTS DO NOT MEET ELIGIBILITY FOR RETURN OR REFUND CRITERIA.</li>
+                </ul></li>
+                <li><strong>WARRANTY:</strong> ALL PRODUCTS COME WITH A 2-MONTH TESTING WARRANTY, STARTING FROM THE DATE OF DELIVERY. THIS WARRANTY COVERS MANUFACTURING DEFECTS AND DOES NOT COVER DAMAGE RESULTING FROM MISUSE, ACCIDENTS, OR UNAUTHORIZED REPAIRS. FOR WARRANTY CLAIMS, PLEASE CONTACT OUR CUSTOMER SUPPORT.</li>
+                <li><strong>INTELLECTUAL PROPERTY:</strong> ALL CONTENT ON THIS WEBSITE, INCLUDING BUT NOT LIMITED TO TEXT, IMAGES, LOGOS, GRAPHICS, VIDEO, AUDIO, AND SOFTWARE, IS THE PROPERTY OF [TECH NEXUS WORLD] OR ITS CONTENT SUPPLIERS AND IS PROTECTED BY COPYRIGHT, TRADEMARK, AND OTHER INTELLECTUAL PROPERTY LAWS.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="our-services" class="py-16 px-6 md:px-16 bg-white rounded-xl mx-4 my-8 shadow-md">
+        <h2 class="text-3xl section-heading text-center mb-10">OUR SERVICES</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+            <h3 class="text-2xl sub-heading mb-4 text-blue-700">FOCUS ON CHOICE AND EXPERTISE --- YOUR DESTINATION FOR THE LATEST LAPTOPS.</h3>
+            <p class="content-paragraph mb-4">
+                NAVIGATING THE WORLD OF LAPTOPS CAN BE OVERWHELMING, BUT WE'RE HERE TO MAKE IT EASY. WE OFFER A DIVERSE RANGE OF LAPTOPS AND PC FROM INDUSTRY-LEADING MANUFACTURERS, CAREFULLY SELECTED BY OUR TEAM OF EXPERTS. FROM ULTRAPORTABLE NOTEBOOKS TO POWERFUL GAMING RIGS AND VERSATILE 2-IN-1S, WE PROVIDE DETAILED INFORMATION AND HELPFUL RESOURCES TO GUIDE YOU IN MAKING THE RIGHT CHOICE. FIND THE PERFECT BLEND OF PERFORMANCE, FEATURES, AND VALUE TO MATCH YOUR UNIQUE REQUIREMENTS.
+            </p>
+            <h3 class="text-2xl sub-heading mb-4 text-blue-700">HIGHEST QUALITY AND PERFORMANCE --- EXPERIENCE UNCOMPROMISING PERFORMANCE WITH OUR PREMIUM LAPTOPS AND PC.</h3>
+            <p class="content-paragraph mb-4">
+                ELEVATE YOUR PRODUCTIVITY AND ENTERTAINMENT WITH OUR SELECTION OF TOP-TIER LAPTOPS AND PC. WE FEATURE DEVICES ENGINEERED FOR SPEED, EFFICIENCY, AND RELIABILITY, BOASTING CUTTING-EDGE PROCESSORS, VIBRANT DISPLAYS, AND LONG-LASTING BATTERY LIFE. WHETHER YOU'RE TACKLING DEMANDING TASKS, IMMERSING YOURSELF IN MULTIMEDIA, OR STAYING CONNECTED ON THE GO, OUR LAPTOPS DELIVER THE POWER AND PERFORMANCE YOU NEED TO EXCEL.
+            </p>
+            <h3 class="text-2xl sub-heading mb-4 text-blue-700">CONCISE AND DIRECT --- SHOP OUR WIDE SELECTION OF LAPTOPS.</h3>
+            <p class="content-paragraph mb-4">
+                DISCOVER THE LATEST LAPTOPS FROM ALL THE TOP BRANDS. WE OFFER A VARIETY OF MODELS FOR WORK, SCHOOL, GAMING, AND EVERYDAY USE. FIND THE PERFECT LAPTOP AND PC TO FIT YOUR NEEDS AND BUDGET.
+            </p>
+        </div>
+    </section>
+
+    <!-- Shopping Section -->
+    <section id="shopping" class="py-16 px-6 md:px-16 bg-gray-100 rounded-xl mx-4 my-8 shadow-md text-center">
+        <h2 class="text-3xl section-heading mb-10 text-yellow-500">SHOPPING</h2>
+        <div class="max-w-2xl mx-auto space-y-6">
+            <p class="text-2xl font-bold uppercase mb-4">OUR SHOPPING E-COMMERCE WEBSITE IS COMING SOON</p>
+            <p class="text-xl font-medium uppercase mb-8">IF YOU WANT OUR PRODUCTS PLEASE VISIT OUR INSTAGRAM ID</p>
+            <a href="https://www.instagram.com/tech_nexus_world?igsh=MWNva2xlMjhhZmt3cA==" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 button-primary">
+                INSTAGRAM > CLICK HERE TO VISIT
+            </a>
+            <div class="flex justify-center mt-8">
+                <!-- Instagram QR Code - Still using an online placeholder -->
+                <img src="https://placehold.co/200x200/FFFFFF/2563EB?text=INSTAGRAM+QR" alt="Instagram QR Code" class="w-48 h-48 rounded-lg shadow-lg">
+            </div>
+            <p class="text-lg font-bold uppercase mt-4">TECH_NEXUS_WORLD</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-blue-700 text-white py-16 px-6 md:px-12 rounded-xl mx-4 my-8 shadow-lg">
+        <h2 class="text-3xl section-heading text-center mb-10 text-white">WHY CHOOSE TECH NEXUS WORLD?</h2>
+        <div class="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-8 max-w-5xl mx-auto">
+            <div class="text-center">
+                <svg class="w-16 h-16 mx-auto mb-4 text-yellow-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                <h3 class="text-xl font-semibold mb-2 uppercase">QUALITY ASSURANCE</h3>
+                <p class="opacity-90 text-sm">EVERY PRODUCT IS RIGOROUSLY TESTED FOR PERFORMANCE AND RELIABILITY.</p>
+            </div>
+            <div class="text-center">
+                <svg class="w-16 h-16 mx-auto mb-4 text-yellow-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg>
+                <h3 class="text-xl font-semibold mb-2 uppercase">EXPERT SUPPORT</h3>
+                <p class="opacity-90 text-sm">OUR TEAM IS READY TO ASSIST YOU WITH ANY QUERIES OR ISSUES.</p>
+            </div>
+            <div class="text-center">
+                <svg class="w-16 h-16 mx-auto mb-4 text-yellow-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 12.83l-3.3-3.3 1.41-1.41L10.59 13l4.95-4.95 1.41 1.41-6.36 6.37z"></path></svg>
+                <h3 class="text-xl font-semibold mb-2 uppercase">COMPETITIVE PRICING</h3>
+                <p class="opacity-90 text-sm">GET THE BEST DEALS WITHOUT COMPROMISING ON QUALITY.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-10 px-6 md:px-12 rounded-t-lg">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl footer-text text-white mb-4">TECH NEXUS WORLD</h3>
+                <p class="text-sm footer-text">YOUR TRUSTED SOURCE FOR HIGH-QUALITY, RELIABLE USED COMPUTERS AND LAPTOPS.</p>
+            </div>
+            <div>
+                <h3 class="text-xl footer-text text-white mb-4">QUICK LINKS</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about-us" class="hover:text-blue-400 transition duration-300 text-sm footer-text">ABOUT US</a></li>
+                    <li><a href="#conditions-terms" class="hover:text-blue-400 transition duration-300 text-sm footer-text">CONDITIONS & TERMS</a></li>
+                    <li><a href="#our-services" class="hover:text-blue-400 transition duration-300 text-sm footer-text">OUR SERVICES</a></li>
+                    <li><a href="#shopping" class="hover:text-blue-400 transition duration-300 text-sm footer-text">SHOPPING</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl footer-text text-white mb-4">CONNECT WITH US</h3>
+                <p class="text-sm mb-4 footer-text">STAY UPDATED ON OUR LATEST PRODUCTS AND OFFERS!</p>
+                <div class="flex space-x-4">
+                    <!-- Only Instagram Button remains -->
+                    <a href="https://www.instagram.com/tech_nexus_world?igsh=MWNva2xlMjhhZmt3cA==" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500 transition duration-300">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.774 1.65 4.984 4.984.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.069 4.849-.149 3.235-1.663 4.777-4.984 4.984-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.773-1.664-4.984-4.984-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.069-4.849.149-3.235 1.663-4.777 4.984-4.984 1.265-.058 1.644-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.93.072-4.35 0-6.721 2.37-6.721 6.721 0 1.263.014 1.671.072 4.93 0 3.259-.014 3.667-.072 4.93-2.37 4.35-2.37 6.721-6.721 6.721-1.263-.058-1.671-.072-4.93-.072-3.259 0-3.667.014-4.93.072-4.35 0-6.721 2.37-6.721 6.721 0 1.263.014 1.671.072 4.93 0 3.259-.014 3.667-.072 4.93-2.37 4.35-2.37 6.721-6.721 6.721zm0 4.325c-3.619 0-6.575 2.956-6.575 6.575s2.956 6.575 6.575 6.575 6.575-2.956 6.575-6.575-2.956-6.575-6.575-6.575zm0 10.825c-2.35 0-4.25-1.9-4.25-4.25s1.9-4.25 4.25-4.25 4.25 1.9 4.25 4.25-1.9 4.25-4.25 4.25zm5.161-10.975c-.569 0-1.034.465-1.034 1.034s.465 1.034 1.034 1.034 1.034-.465 1.034-1.034-.465-1.034-1.034-1.034z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500 footer-text">
+            &copy; 2025 TECH NEXUS WORLD. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle and Smooth Scrolling
+        const mobileMenuToggleBtn = document.getElementById('mobile-menu-toggle-btn');
+        const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const navLinks = document.querySelectorAll('.mobile-menu-content a, nav a'); // All nav links
+
+        // Toggle mobile menu
+        mobileMenuToggleBtn.addEventListener('click', () => {
+            mobileMenuOverlay.classList.add('open');
+        });
+
+        mobileMenuCloseBtn.addEventListener('click', () => {
+            mobileMenuOverlay.classList.remove('open');
+        });
+
+        // Smooth scroll for all navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) { // Check if it's an anchor link
+                    e.preventDefault(); // Prevent default anchor jump
+
+                    const targetId = href.substring(1); // Get the ID without '#'
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (mobileMenuOverlay.classList.contains('open')) {
+                            mobileMenuOverlay.classList.remove('open');
+                        }
+
+                        // Smooth scroll to the target element
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        // Removed all AI-related JavaScript functionality as both AI sections were removed.
+    </script>
+</body>
+</html>
